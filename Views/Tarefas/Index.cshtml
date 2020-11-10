@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Agenda.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Tarefas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioFim)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioFim)
+            </td>
+            <td>
+                <a class="fas fa-edit fa-lg text-info" asp-action="Edit" asp-route-id="@item.Id"></a> |
+                <a class="fas fa-info-circle fa-lg text-warning"asp-action="Details" asp-route-id="@item.Id"></a> |
+                <a class="fas fa-trash-alt fa-lg text-danger" asp-action="Delete" asp-route-id="@item.Id"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

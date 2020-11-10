@@ -1,0 +1,53 @@
+﻿@model Agenda.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes da Tarefa</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HorarioInicio)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioFim)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HorarioFim)
+            <hr />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index" class="btn btn-default">Voltar</a>
+</div>
